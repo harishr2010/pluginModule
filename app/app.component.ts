@@ -4,6 +4,7 @@ import { ProductService } from './products/product.service.js';
 
 @Component({
     selector: 'pm-app',
+    providers: [ProductService],
     templateUrl: 'https://raw.githubusercontent.com/harishr2010/pluginModule/master/app/products/product-list.component.html',
     styleUrls: ['https://raw.githubusercontent.com/harishr2010/pluginModule/master/app/products/product-list.component.css']
 })
