@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 var Observable_1 = require("rxjs/Observable");
+var BehaviorSubject_1 = require("rxjs/BehaviorSubject");
 require("rxjs/add/operator/map");
 require("rxjs/add/operator/catch");
 require("rxjs/add/operator/do");
@@ -21,7 +22,8 @@ var ProductService = (function () {
         this.productUrl = "https://raw.githubusercontent.com/harishr2010/pluginModule/master/api/products/products.json";
         this.count = 0;
         var self = this;
-        this.clickCount = new Observable_1.Observable(function (obs) { return self.observer = obs; });
+        this.behaviorSubject = new BehaviorSubject_1.BehaviorSubject(0);
+        this.clickCount = this.behaviorSubject.asObservable();
     }
     ProductService.prototype.getProducts = function () {
         return this._http.get(this.productUrl)
@@ -30,7 +32,7 @@ var ProductService = (function () {
             .catch(this.handleError);
     };
     ProductService.prototype.incrementCount = function () {
-        this.observer.next(++this.count);
+        this.behaviorSubject.next(++this.count);
     };
     ProductService.prototype.handleError = function (error) {
         return Observable_1.Observable.throw(error);
