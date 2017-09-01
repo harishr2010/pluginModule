@@ -21,9 +21,7 @@ var ProductService = (function () {
         this.productUrl = "https://raw.githubusercontent.com/harishr2010/pluginModule/master/api/products/products.json";
         this.count = 0;
         var self = this;
-        this.clickCount = Observable_1.Observable.create(function (obs) {
-            self.observer = obs;
-        });
+        this.clickCount = Observable_1.Observable.create(function (obs) { return self.observer = obs; });
     }
     ProductService.prototype.getProducts = function () {
         return this._http.get(this.productUrl)
