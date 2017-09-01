@@ -16,9 +16,10 @@ export class AppComponent {
     showImage: boolean;
     listFilter: string;
     products: IProduct[];
+    clickCount: number;
 
     constructor(private productService: ProductService) {
-
+        this.clickCount = productService.clickCount;
     }
 
     ngOnInit(): void {

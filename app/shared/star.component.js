@@ -10,8 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var product_service_js_1 = require("../products/product.service.js");
 var StarComponent = (function () {
-    function StarComponent() {
+    function StarComponent(productService) {
+        this.productService = productService;
         this.ratingCliked = new core_1.EventEmitter();
         this.starWidth = 1;
     }
@@ -19,7 +21,8 @@ var StarComponent = (function () {
         this.starWidth = 86 / 5 * this.rating;
     };
     StarComponent.prototype.onClick = function () {
-        this.ratingCliked.emit("The rating " + this.rating + " was clicked");
+        //   this.ratingCliked.emit(`The rating ${this.rating} was clicked`);
+        this.productService.incrementCount();
     };
     return StarComponent;
 }());
@@ -34,8 +37,9 @@ __decorate([
 StarComponent = __decorate([
     core_1.Component({
         selector: 'ai-star',
-        template: "<h1>Hadging for start component</h1>"
-    })
+        template: "<h1>Hadging for start component</h1> <button (click)=\"onClick()\">increment</button>"
+    }),
+    __metadata("design:paramtypes", [product_service_js_1.ProductService])
 ], StarComponent);
 exports.StarComponent = StarComponent;
 //# sourceMappingURL=star.component.js.map

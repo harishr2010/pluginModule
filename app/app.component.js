@@ -24,6 +24,7 @@ var AppComponent = (function () {
         this.onRatingClicked = function (event) {
             _this.pageTitle = event;
         };
+        this.clickCount = productService.clickCount;
     }
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
