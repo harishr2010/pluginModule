@@ -3,6 +3,7 @@ import { Http, Response } from '@angular/http';
 import { IProduct } from './product.js';
 import { Observable } from 'rxjs/Observable';
 import { Observer } from 'rxjs/Observer';
+import { Subscriber } from 'rxjs/Subscriber';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
@@ -16,7 +17,7 @@ export class ProductService {
     count: number = 0;
     constructor(private _http: Http) {
         let self = this;
-        this.clickCount = Observable.create((obs: Observer<any>) => self.observer = obs);
+        this.clickCount = new Observable((obs: Subscriber<any>) => self.observer = obs);
     }
 
     getProducts(): Observable<IProduct[]> {
