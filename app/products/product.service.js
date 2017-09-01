@@ -18,7 +18,7 @@ require("rxjs/add/operator/do");
 var ProductService = (function () {
     function ProductService(_http) {
         this._http = _http;
-        this.productUrl = "api/products/products.json";
+        this.productUrl = "https://raw.githubusercontent.com/harishr2010/pluginModule/master/api/products/products.json";
     }
     ProductService.prototype.getProducts = function () {
         return this._http.get(this.productUrl)

@@ -9,7 +9,7 @@ import 'rxjs/add/operator/do';
 @Injectable()
 export class ProductService {
 
-    private productUrl: string = "api/products/products.json";
+    private productUrl: string = "https://raw.githubusercontent.com/harishr2010/pluginModule/master/api/products/products.json";
     constructor(private _http: Http) {
 
     }
