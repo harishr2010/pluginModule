@@ -28,7 +28,8 @@ AppModule = __decorate([
             app_component_js_1.AppComponent
         ],
         providers: [
-            product_service_js_1.ProductService
+            product_service_js_1.ProductService,
+            http_1.Http
         ]
     })
 ], AppModule);
