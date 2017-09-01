@@ -30,8 +30,10 @@ var AppComponent = (function () {
         var _this = this;
         this.productService.getProducts()
             .subscribe(function (data) { return _this.products = data; });
-        this.observableNum = this.productService.clickCount;
-        this.observableNum.subscribe(function (value) { return _this.clickCount = value; });
+        this.observableNum = this.productService.getCounter();
+        this.observableNum.subscribe(function (value) {
+            _this.clickCount = value;
+        });
     };
     return AppComponent;
 }());

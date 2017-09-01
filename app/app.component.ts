@@ -27,8 +27,10 @@ export class AppComponent {
     ngOnInit(): void {
         this.productService.getProducts()
             .subscribe(data => this.products = data);
-        this.observableNum = this.productService.clickCount;
-        this.observableNum.subscribe(value => this.clickCount = value);
+        this.observableNum = this.productService.getCounter();
+        this.observableNum.subscribe(value => {
+            this.clickCount = value;
+        });
     }
 
     toggleImage = (): void => {

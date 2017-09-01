@@ -23,13 +23,15 @@ var ProductService = (function () {
         this.count = 0;
         var self = this;
         this.behaviorSubject = new BehaviorSubject_1.BehaviorSubject(0);
-        this.clickCount = this.behaviorSubject.asObservable();
     }
     ProductService.prototype.getProducts = function () {
         return this._http.get(this.productUrl)
             .map(function (response) { return response.json(); })
             .do(function (data) { return console.log(JSON.stringify(data)); })
             .catch(this.handleError);
+    };
+    ProductService.prototype.getCounter = function () {
+        return this.behaviorSubject.asObservable();
     };
     ProductService.prototype.incrementCount = function () {
         this.behaviorSubject.next(++this.count);
