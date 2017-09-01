@@ -19,7 +19,9 @@ var ProductService = (function () {
     function ProductService(_http) {
         this._http = _http;
         this.productUrl = "https://raw.githubusercontent.com/harishr2010/pluginModule/master/api/products/products.json";
-        this.clickCount = 0;
+        this.count = 0;
+        var self = this;
+        this.clickCount = Observable_1.Observable.create(function (obs) { self.observer = obs; });
     }
     ProductService.prototype.getProducts = function () {
         return this._http.get(this.productUrl)
@@ -28,7 +30,7 @@ var ProductService = (function () {
             .catch(this.handleError);
     };
     ProductService.prototype.incrementCount = function () {
-        ++this.clickCount;
+        this.observer.next(++this.count);
     };
     ProductService.prototype.handleError = function (error) {
         return Observable_1.Observable.throw(error);

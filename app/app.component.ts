@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IProduct } from './products/product.js';
 import { ProductService } from './products/product.service.js';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
     selector: 'pm-app',
@@ -17,14 +18,17 @@ export class AppComponent {
     listFilter: string;
     products: IProduct[];
     clickCount: number;
+    private observableNum: Observable<number>;
 
     constructor(private productService: ProductService) {
-        this.clickCount = productService.clickCount;
+        // this.clickCount = productService.clickCount;
     }
 
     ngOnInit(): void {
         this.productService.getProducts()
             .subscribe(data => this.products = data);
+        this.observableNum = this.productService.clickCount;
+        this.observableNum.subscribe(value => this.clickCount = value);
     }
 
     toggleImage = (): void => {

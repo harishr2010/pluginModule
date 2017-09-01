@@ -24,12 +24,14 @@ var AppComponent = (function () {
         this.onRatingClicked = function (event) {
             _this.pageTitle = event;
         };
-        this.clickCount = productService.clickCount;
+        // this.clickCount = productService.clickCount;
     }
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.productService.getProducts()
             .subscribe(function (data) { return _this.products = data; });
+        this.observableNum = this.productService.clickCount;
+        this.observableNum.subscribe(function (value) { return _this.clickCount = value; });
     };
     return AppComponent;
 }());
