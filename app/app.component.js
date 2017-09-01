@@ -55,8 +55,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'pm-app',
-        templateUrl: 'app/products/product-list.component.html',
-        styleUrls: ['app/products/product-list.component.css']
+        templateUrl: 'https://raw.githubusercontent.com/harishr2010/pluginModule/master/app/products/product-list.component.html',
+        styleUrls: ['https://raw.githubusercontent.com/harishr2010/pluginModule/master/app/products/product-list.component.css']
     }),
     __metadata("design:paramtypes", [product_service_js_1.ProductService])
 ], AppComponent);
