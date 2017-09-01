@@ -1,10 +1,19 @@
 import { Component, OnChanges, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-    moduleId: module.id,
     selector: 'ai-star',
-    templateUrl: 'star.component.html',
-    styleUrls: ['star.component.css']
+    template: `<div class="crop" 
+                [style.width.px]="starWidth" 
+                [title]="rating"
+                (click)="onClick()">
+                    <div style="width:86px">
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                    </div>
+                </div>`
 })
 
 export class StarComponent implements OnChanges {

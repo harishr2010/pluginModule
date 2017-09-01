@@ -12,6 +12,7 @@ var common_1 = require("@angular/common");
 var http_1 = require("@angular/http");
 var product_service_js_1 = require("./products/product.service.js");
 var app_component_js_1 = require("./app.component.js");
+var star_component_js_1 = require("./shared/star.component.js");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -25,11 +26,11 @@ AppModule = __decorate([
             http_1.HttpModule
         ],
         declarations: [
-            app_component_js_1.AppComponent
+            app_component_js_1.AppComponent,
+            star_component_js_1.StarComponent
         ],
         providers: [
-            product_service_js_1.ProductService,
-            http_1.Http
+            product_service_js_1.ProductService
         ]
     })
 ], AppModule);

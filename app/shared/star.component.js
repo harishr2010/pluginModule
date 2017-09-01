@@ -33,10 +33,8 @@ __decorate([
 ], StarComponent.prototype, "ratingCliked", void 0);
 StarComponent = __decorate([
     core_1.Component({
-        moduleId: module.id,
         selector: 'ai-star',
-        templateUrl: 'star.component.html',
-        styleUrls: ['star.component.css']
+        template: "<div class=\"crop\" \n                [style.width.px]=\"starWidth\" \n                [title]=\"rating\"\n                (click)=\"onClick()\">\n                    <div style=\"width:86px\">\n                        <span class=\"glyphicon glyphicon-star\"></span>\n                        <span class=\"glyphicon glyphicon-star\"></span>\n                        <span class=\"glyphicon glyphicon-star\"></span>\n                        <span class=\"glyphicon glyphicon-star\"></span>\n                        <span class=\"glyphicon glyphicon-star\"></span>\n                    </div>\n                </div>"
     })
 ], StarComponent);
 exports.StarComponent = StarComponent;
