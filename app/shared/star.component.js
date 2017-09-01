@@ -34,7 +34,7 @@ __decorate([
 StarComponent = __decorate([
     core_1.Component({
         selector: 'ai-star',
-        template: "<div class=\"crop\" \n                [style.width.px]=\"starWidth\" \n                [title]=\"rating\"\n                (click)=\"onClick()\">\n                    <div style=\"width:86px\">\n                        <span class=\"glyphicon glyphicon-star\"></span>\n                        <span class=\"glyphicon glyphicon-star\"></span>\n                        <span class=\"glyphicon glyphicon-star\"></span>\n                        <span class=\"glyphicon glyphicon-star\"></span>\n                        <span class=\"glyphicon glyphicon-star\"></span>\n                    </div>\n                </div>"
+        template: "<h1>Hadging for start component</h1>"
     })
 ], StarComponent);
 exports.StarComponent = StarComponent;
