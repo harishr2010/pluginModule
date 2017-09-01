@@ -16,7 +16,9 @@ export class ProductService {
     count: number = 0;
     constructor(private _http: Http) {
         let self = this;
-        this.clickCount = Observable.create((obs: Observer<any>) => { self.observer = obs });
+        this.clickCount = Observable.create((obs: Observer<any>) => {
+            self.observer = obs;
+        });
     }
 
     getProducts(): Observable<IProduct[]> {
