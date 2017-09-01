@@ -11,27 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var product_service_js_1 = require("./products/product.service.js");
+require("https://raw.githubusercontent.com/harishr2010/pluginModule/master/app/products/product-list.component.css");
 var AppComponent = (function () {
-    // products: IProduct[] = [{
-    //     productId: '1',
-    //     productName: "Leaf Rake",
-    //     productCode: "GDN-0011",
-    //     releaseDate: "March 19, 2016",
-    //     description: "Leaf rake with 48-inch wooden handle.",
-    //     price: 19.95,
-    //     starRating: 3.2,
-    //     imageUrl: 'app/assets/images/Sonic_the_Hedgehog_from_S4E2_Clean_PNG_Format.png'
-    // },
-    // {
-    //     productId: '2',
-    //     productName: "Garden Cart",
-    //     productCode: "GDN-0023",
-    //     releaseDate: "March 18, 2016",
-    //     description: "15 gallon capacity rolling garden cart",
-    //     price: 32.99,
-    //     starRating: 4.2,
-    //     imageUrl: 'app/assets/images/Sonic_the_Hedgehog_from_S4E2_Clean_PNG_Format.png'
-    // }];
     function AppComponent(productService) {
         var _this = this;
         this.productService = productService;
