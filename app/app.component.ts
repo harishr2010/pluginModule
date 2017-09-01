@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IProduct } from './products/product.js';
 import { ProductService } from './products/product.service.js';
-import 'https://raw.githubusercontent.com/harishr2010/pluginModule/master/app/products/product-list.component.css';
+import * from 'https://raw.githubusercontent.com/harishr2010/pluginModule/master/app/products/product-list.component.css';
 
 @Component({
     selector: 'pm-app',
