@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
-// import { BrowserModule } from '@angular/platform-browser';
+var common_1 = require("@angular/common");
 var http_1 = require("@angular/http");
 var product_service_js_1 = require("./products/product.service.js");
 var app_component_js_1 = require("./app.component.js");
@@ -20,6 +20,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [
+            common_1.CommonModule,
             forms_1.FormsModule,
             http_1.HttpModule
         ],
