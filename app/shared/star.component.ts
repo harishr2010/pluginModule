@@ -3,6 +3,7 @@ import { ProductService } from '../products/product.service.js';
 
 @Component({
     selector: 'ai-star',
+    providers: [ProductService],
     template: `<h1>Hadging for start component</h1> <button (click)="onClick()">increment</button>`
 })
 

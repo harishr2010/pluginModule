@@ -37,6 +37,7 @@ __decorate([
 StarComponent = __decorate([
     core_1.Component({
         selector: 'ai-star',
+        providers: [product_service_js_1.ProductService],
         template: "<h1>Hadging for start component</h1> <button (click)=\"onClick()\">increment</button>"
     }),
     __metadata("design:paramtypes", [product_service_js_1.ProductService])
