@@ -20,6 +20,10 @@ import { StarComponent } from './shared/star.component.js';
   ],
   providers: [
     ProductService
+  ],
+  entryComponents: [
+    AppComponent,
+    StarComponent
   ]
 })
 export class AppModule { }

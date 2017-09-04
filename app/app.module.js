@@ -31,6 +31,10 @@ AppModule = __decorate([
         ],
         providers: [
             product_service_js_1.ProductService
+        ],
+        entryComponents: [
+            app_component_js_1.AppComponent,
+            star_component_js_1.StarComponent
         ]
     })
 ], AppModule);
