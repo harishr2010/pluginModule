@@ -1,9 +1,18 @@
 import { Component, OnChanges, Input, Output, EventEmitter } from '@angular/core';
+import { Http } from '@angular/http';
 import { ProductService } from '../products/product.service.js';
 
 @Component({
     selector: 'ai-star',
-    providers: [ProductService],
+    providers: [
+        {
+            provide: ProductService,
+            deps: [Http],
+            useFactory: (_http: Http) => {
+                return ProductService.getInstance(_http);
+            }
+        }
+    ],
     template: `<h1>Hadging for start component</h1> <button (click)="onClick()">increment</button>`
 })
 

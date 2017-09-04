@@ -16,7 +16,7 @@ var BehaviorSubject_1 = require("rxjs/BehaviorSubject");
 require("rxjs/add/operator/map");
 require("rxjs/add/operator/catch");
 require("rxjs/add/operator/do");
-var ProductService = (function () {
+var ProductService = ProductService_1 = (function () {
     function ProductService(_http) {
         this._http = _http;
         this.productUrl = "https://raw.githubusercontent.com/harishr2010/pluginModule/master/api/products/products.json";
@@ -24,6 +24,12 @@ var ProductService = (function () {
         var self = this;
         this.behaviorSubject = new BehaviorSubject_1.BehaviorSubject(0);
     }
+    ProductService.getInstance = function (http) {
+        if (!ProductService_1.singleInstance) {
+            ProductService_1.singleInstance = new ProductService_1(http);
+        }
+        return ProductService_1.singleInstance;
+    };
     ProductService.prototype.getProducts = function () {
         return this._http.get(this.productUrl)
             .map(function (response) { return response.json(); })
@@ -41,9 +47,10 @@ var ProductService = (function () {
     };
     return ProductService;
 }());
-ProductService = __decorate([
+ProductService = ProductService_1 = __decorate([
     core_1.Injectable(),
     __metadata("design:paramtypes", [http_1.Http])
 ], ProductService);
 exports.ProductService = ProductService;
+var ProductService_1;
 //# sourceMappingURL=product.service.js.map

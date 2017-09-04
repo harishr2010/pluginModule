@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
 var product_service_js_1 = require("../products/product.service.js");
 var StarComponent = (function () {
     function StarComponent(productService) {
@@ -37,7 +38,15 @@ __decorate([
 StarComponent = __decorate([
     core_1.Component({
         selector: 'ai-star',
-        providers: [product_service_js_1.ProductService],
+        providers: [
+            {
+                provide: product_service_js_1.ProductService,
+                deps: [http_1.Http],
+                useFactory: function (_http) {
+                    return product_service_js_1.ProductService.getInstance(_http);
+                }
+            }
+        ],
         template: "<h1>Hadging for start component</h1> <button (click)=\"onClick()\">increment</button>"
     }),
     __metadata("design:paramtypes", [product_service_js_1.ProductService])

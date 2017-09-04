@@ -2,10 +2,19 @@ import { Component } from '@angular/core';
 import { IProduct } from './products/product.js';
 import { ProductService } from './products/product.service.js';
 import { Observable } from 'rxjs/Observable';
+import { Http } from '@angular/http';
 
 @Component({
     selector: 'pm-app',
-    providers: [ProductService],
+    providers: [
+        {
+            provide: ProductService,
+            deps: [Http],
+            useFactory: (_http: Http) => {
+                return ProductService.getInstance(_http);
+            }
+        }
+    ],
     templateUrl: 'https://raw.githubusercontent.com/harishr2010/pluginModule/master/app/products/product-list.component.html',
     styleUrls: ['https://raw.githubusercontent.com/harishr2010/pluginModule/master/app/products/product-list.component.css']
 })

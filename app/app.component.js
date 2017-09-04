@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var product_service_js_1 = require("./products/product.service.js");
+var http_1 = require("@angular/http");
 var AppComponent = (function () {
     function AppComponent(productService) {
         var _this = this;
@@ -40,7 +41,15 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'pm-app',
-        providers: [product_service_js_1.ProductService],
+        providers: [
+            {
+                provide: product_service_js_1.ProductService,
+                deps: [http_1.Http],
+                useFactory: function (_http) {
+                    return product_service_js_1.ProductService.getInstance(_http);
+                }
+            }
+        ],
         templateUrl: 'https://raw.githubusercontent.com/harishr2010/pluginModule/master/app/products/product-list.component.html',
         styleUrls: ['https://raw.githubusercontent.com/harishr2010/pluginModule/master/app/products/product-list.component.css']
     }),

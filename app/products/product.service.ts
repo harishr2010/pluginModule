@@ -18,6 +18,15 @@ export class ProductService {
         this.behaviorSubject = new BehaviorSubject<number>(0);
     }
 
+    static singleInstance: ProductService;
+    static getInstance(http: Http): ProductService {
+        if (!ProductService.singleInstance) {
+            ProductService.singleInstance = new ProductService(http);
+        }
+
+        return ProductService.singleInstance;
+    }
+
     getProducts(): Observable<IProduct[]> {
         return this._http.get(this.productUrl)
             .map((response: Response) => <IProduct[]>response.json())
